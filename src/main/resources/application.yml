@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    platform: postgres
+    username: postgres
+    password: 1q2w3e4r!@#
+
+# Mybatis 설정
+mybatis:
+  mapper-locations: classpath:/sqlmap/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
