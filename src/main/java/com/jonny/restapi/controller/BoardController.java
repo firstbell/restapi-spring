@@ -47,13 +47,15 @@ public class BoardController {
     }
 
     @PutMapping("/board")
-    public ResponseEntity<Integer> updateBoard(@ResponseBody BoardVO boardVO) {
-        
+    public ResponseEntity<Integer> updateBoard(@RequestBody BoardVO boardVO) throws Exception {
+        Integer result = boardService.updateBoard(boardVO);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @DeleteMapping("/board")
-    public ResponseEntity<Integer> deleteBoard(@ResponseBody BoardVO boardVO) {
-
+    @DeleteMapping("/board/{id}")
+    public ResponseEntity<Integer> deleteBoard(@PathVariable int id) throws Exception {
+        Integer result = boardService.deleteBoard(id);
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }
